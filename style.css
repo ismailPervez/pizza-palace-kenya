@@ -1,0 +1,30 @@
+/* google fonts import  */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Sarabun:wght@300&display=swap');
+
+/* variables */
+:root {
+    --font1: 'Kaushan Script', cursive;
+    --font2: 'Sarabun', sans-serif;
+}
+
+/* resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* body */
+body {
+    min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(29, 26, 26);
+}
