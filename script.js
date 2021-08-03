@@ -113,29 +113,42 @@ openCheckOutBtn.click(function() {
     $('.checkout-container').addClass('active');
 })
 
+// close checkout
+var closeCheckoutBtn  = $('.checkout-close-btn i');
+closeCheckoutBtn.click(function() {
+    $('.checkout-container').removeClass('active');
+})
+
 // order functionality
 var orderBtn = $('#order-btn');
 orderBtn.click(function() {
     var deliveryLocationValue = $('#delivery-location').val();
     var inCartItems = JSON.parse(localStorage.getItem('pizza-palace-cart'));
-        
-    var totalPrice = 0;
-    for (let i = 0; i < inCartItems.length; i++) {
-        totalPrice += parseInt(inCartItems[i].totalPrice);
-    }
 
-    if (deliveryLocationValue) {
-
-        totalPrice += 100;
-
-        var message = `your pizza(s) will be delivered at ${deliveryLocationValue} at a total of ksh.${totalPrice} including ksh.100 for delivery charges. thank you!`
-        alert(message);
+    // check if any items in the cart
+    if (inCartItems.length < 1) {
+        alert('you have no items to order!');
     }
 
     else {
-        var message = `you can come pick up your pizza(s) for a total of ksh.${totalPrice}. thank you!`
-        alert(message);
+        var totalPrice = 0;
+        for (let i = 0; i < inCartItems.length; i++) {
+            totalPrice += parseInt(inCartItems[i].totalPrice);
+        }
+    
+        if (deliveryLocationValue) {
+    
+            totalPrice += 100;
+    
+            var message = `your pizza(s) will be delivered at ${deliveryLocationValue} at a total of ksh.${totalPrice} including ksh.100 for delivery charges. thank you!`
+            alert(message);
+        }
+    
+        else {
+            var message = `you can come pick up your pizza(s) for a total of ksh.${totalPrice}. thank you!`
+            alert(message);
+        }
+    
+        $('.checkout-container').removeClass('active');
     }
-
-    $('.checkout-container').removeClass('active');
 })

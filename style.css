@@ -65,7 +65,7 @@ body::-webkit-scrollbar-thumb {
     pointer-events: auto;
 }
 
-.cart-close-btn i {
+.cart-close-btn i, .checkout-close-btn i {
     cursor: pointer;
     font-size: 20px;
 }
@@ -341,6 +341,13 @@ form p {
     font-size: 30px;
     margin-bottom: 3%;
 } 
+
+form .price {
+    font-size: 17px;
+    font-weight: bold;
+    display: inline-flex;
+    margin-left: 5%;
+}
 
 /* footer */
 footer {
