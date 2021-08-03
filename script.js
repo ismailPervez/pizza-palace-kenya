@@ -38,3 +38,18 @@ clearCartBtn.click(function() {
     localStorage.setItem('pizza-palace-cart', JSON.stringify([]));
     updateCart();
 })
+
+// pop up the cart modal if cart button is clicked
+var cartIconBtn = $('.cart-icon');
+var cartModal = $('.cart-container');
+var closeCartModalBtn = $('.cart-close-btn .fa-times');
+
+// opens cart
+cartIconBtn.click(function() {
+    cartModal.addClass('active');
+})
+
+// closes cart
+closeCartModalBtn.click(function() {
+    cartModal.removeClass('active');
+})
