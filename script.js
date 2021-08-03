@@ -65,3 +65,43 @@ class Pizza {
         this.totalPrice = totalPrice;
     }
 }
+
+// get the form element
+var form = $('form');
+form.submit(function(event) {
+    event.preventDefault();
+    
+    var sizeValue = $('.size input:checked').attr('id');
+    var sizePrice = parseInt($('.size input:checked').val());
+    var crustValue = $('.crust input:checked').attr('id');
+    var crustPrice = parseInt($('.crust input:checked').val());
+    // get all toppings
+    var toppingsList = document.querySelectorAll('.toppings input');
+    var toppings = [];
+    var toppingsPrice = 0;
+    for (let i = 0; i < toppingsList.length; i++) {
+        if (toppingsList[i].checked) {
+            toppings.push(toppingsList[i].id);
+            toppingsPrice += parseInt(toppingsList[i].value);
+        }
+    }
+
+    if (sizeValue && crustValue && (toppings.length > 0)) {
+        var totalPrice = sizePrice + crustPrice + toppingsPrice;
+        console.log(totalPrice);
+        var pizza = new Pizza(sizeValue, crustValue, toppings, totalPrice);
+        // update cart
+        var inCart = JSON.parse(localStorage.getItem('pizza-palace-cart'));
+        inCart.push(pizza);
+        localStorage.setItem('pizza-palace-cart', JSON.stringify(inCart));
+        updateCart();
+        // reset form
+        document.querySelector('form').reset();
+        var message = `You have created one ${pizza.size} with ${pizza.crust} crust and ${pizza.toppings} as toppings. Your total for this is ${pizza.totalPrice}`;
+        alert(message);
+    }
+
+    else {
+        alert('all fields are required!');
+    }
+})
