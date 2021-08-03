@@ -105,3 +105,10 @@ form.submit(function(event) {
         alert('all fields are required!');
     }
 })
+
+// checkout functionality
+var openCheckOutBtn = $('#checkout');
+openCheckOutBtn.click(function() {
+    $('.cart-container').removeClass('active');
+    $('.checkout-container').addClass('active');
+})
