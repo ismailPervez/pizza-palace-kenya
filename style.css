@@ -260,3 +260,49 @@ footer {
 #mark {
     font-family: var(--font1);
 }
+
+@media only screen and (max-width: 650px) {
+    .form-container form {
+        margin: 0 10%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .cart-container, .checkout-container {
+        width: 90%;
+        height: 90%;
+    }
+
+    .intro {
+        margin-top: 10%;;
+    }
+
+    .intro article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .intro .description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 440px) {
+    .cart-container, .checkout-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    form p {
+        font-size: 20px;
+        margin-bottom: 3%;
+    } 
+}
