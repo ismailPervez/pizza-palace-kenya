@@ -53,3 +53,15 @@ cartIconBtn.click(function() {
 closeCartModalBtn.click(function() {
     cartModal.removeClass('active');
 })
+
+// the order pizza functionality - create pizza
+// create a pizza object
+
+class Pizza {
+    constructor(size, crust, toppings, totalPrice) {
+        this.size = size;
+        this.crust = crust;
+        this.toppings = toppings;
+        this.totalPrice = totalPrice;
+    }
+}
