@@ -29,6 +29,104 @@ body::-webkit-scrollbar-thumb {
     background-color: rgb(29, 26, 26);
 }
 
+.cart-container::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+.cart-container::-webkit-scrollbar-thumb {
+    background-color: rgb(29, 26, 26);
+}
+
+.cart-container,.checkout-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.74);
+    z-index: 100;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 4%;
+    font-family: var(--font2);
+    overflow-y: scroll;
+    transition: .5s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cart-container.active, .checkout-container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cart-close-btn i {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.cart-container h1 {
+    font-family: var(--font2);
+    text-align: center;
+    padding: 2%;
+    border-bottom: 1px solid white;
+    width: max-content;
+    margin-bottom: 2%;
+}
+
+.cart-container .item {
+    margin-bottom: 3%;
+    font-size: 19px;
+}
+
+.cart-container .item .fa-times {
+    cursor: pointer;
+}
+
+.cart-container .total-price {
+    font-size: 20px;
+}
+
+#checkout, #clear-cart {
+    background-color: rgba(245, 245, 245, 0.445);
+    border: 1px solid white;
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.checkout-container > p {
+    font-size: 20px;
+}
+
+.checkout-container input {
+    margin-bottom: 3%;
+    background-color: rgba(255, 255, 255, 0.671);
+    border: 1px solid black;
+    font-size: 17px;
+    color: black;
+}
+
+.checkout-container input::placeholder {
+    color: black;
+    font-size: 17px;
+}
+
+.checkout-container .btn {
+    background-color: rgba(245, 245, 245, 0.445);
+    border: 1px solid white;
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
 /* header */
 header {
     padding: 1% 2%;
