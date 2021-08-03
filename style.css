@@ -243,3 +243,20 @@ form p {
     font-size: 30px;
     margin-bottom: 3%;
 } 
+
+/* footer */
+footer {
+    padding: 2%;
+    text-align: center;
+    height: 150px;
+}
+
+#from {
+    font-family: var(--font2);
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.795);
+}
+
+#mark {
+    font-family: var(--font1);
+}
