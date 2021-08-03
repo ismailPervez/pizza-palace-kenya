@@ -190,3 +190,56 @@ section.intro article:first-child {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+/* create section */
+.create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.create h1 {
+    font-family: var(--font1);
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 2%;
+}
+
+.create .how-to {
+    font-family: var(--font2);
+}
+
+.how-to p {
+    margin-bottom: 1%;
+}
+
+.create-container {
+    /* border: 1px solid red; */
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-container h3 {
+    font-family: var(--font2);
+    font-size: 30px;
+    margin: 2% 0;
+}
+
+.create-form-container {
+    /* border: 1px solid red; */
+    width: 70%;
+    height: 100%;
+    position: relative;
+}
+
+.form-container {
+    margin: 2% 0;
+    font-family: var(--font2);
+}
+
+form p {
+    font-size: 30px;
+    margin-bottom: 3%;
+} 
