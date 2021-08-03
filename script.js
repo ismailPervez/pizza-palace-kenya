@@ -31,3 +31,10 @@ function updateCart() {
 }
 
 updateCart();
+
+// clear cart functionality
+var clearCartBtn = $('#clear-cart');
+clearCartBtn.click(function() {
+    localStorage.setItem('pizza-palace-cart', JSON.stringify([]));
+    updateCart();
+})
